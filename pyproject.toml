@@ -14,15 +14,19 @@ uvicorn = "^0.34.2"
 [tool.poetry.group.dev.dependencies]
 black = "24.10.0"
 ruff = "0.8.2"
+mypy = "1.13.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
-line-lenght = 120
+line-length = 120
 
 [tool.ruff]
 target-version = "py313"
 
-
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+python_version = 3.13
+strict = true
